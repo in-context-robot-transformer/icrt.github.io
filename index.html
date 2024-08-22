@@ -1,0 +1,233 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>In-Context Imitation Learning via Next-Token Prediction</title>
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.jpg"/>
+    <meta content="In-Context Imitation Learning via Next-Token Prediction" />
+    <meta content="In-Context Imitation Learning via Next-Token Prediction" property="og:title" />
+    <meta content="In-Context Imitation Learning via Next-Token Prediction" property="og:description" />
+    <meta content="https://icrt.github.io/images/splash.png" property="og:image" />
+    <meta content="In-Context Imitation Learning via Next-Token Prediction" property="twitter:title" />
+    <meta content="In-Context Imitation Learning via Next-Token Prediction" property="twitter:description" />
+    <meta content="https://icrt.github.io/images/splash.png" property="twitter:image" />
+    <meta property="og:type" content="website" />
+    <!-- <meta content="summary_large_image" name="twitter:card" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela+Round&display=swap"
+        rel="stylesheet">
+    <link href="style.css?v=v2" rel="stylesheet" type="text/css" />
+
+    <style>
+        ul {
+            list-style-type: disc; /* Default bullets, can be changed to circle, square, etc. */
+            padding-left: 20px; /* Indent the list */
+        }
+        
+        li {
+            font-size: 16px; /* Change font size */
+            font-weight: normal; /* Change font weight */
+            text-align: left; /* Ensure text is left-aligned */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="title-row">
+                <h1 class="title main-title"
+                    style="font-weight: 700; font-size: 50px; font-family: 'Varela Round',sans-serif; margin: 0">
+                    ICRT</h1>
+                <h1 class="title main-title">In-Context Imitation Learning via Next-Token Prediction</h1>
+            </div>
+            <div class="base-row author-row">
+                <div class="base-col author-col1">
+                    <a href="https://max-fu.github.io" target="_blank" class="author-text">Max (Letian) Fu<sup>*</sup><sup>1</sup></a>
+                </div>
+                <div class="base-col author-col1">
+                    <a href="https://ravenh29.github.io/ravenhuang/" target="_blank" class="author-text">Raven Huang<sup>*</sup><sup>1</sup></a>
+                </div>
+                <div class="base-col author-col1">
+                    <a href="https://www.linkedin.com/in/gaurav-datta/" target="_blank" class="author-text">Gaurav Datta<sup>*</sup><sup>1</sup></a>
+                </div>
+                <div class="base-col author-col2">
+                    <a href="https://yunliangchen.github.io/" target="_blank" class="author-text">Lawrence Chen<sup>1</sup></a>
+                </div>
+            </div>
+            <div class="base-row author-row">
+                <div class="base-col author-col2">
+                    <a href="https://willchp.github.io/" target="_blank" class="author-text">Will Panitch<sup>1</sup></a>
+                </div>
+                <div class="base-col author-col2">
+                    <a href="https://fangchenliu.github.io/" target="_blank" class="author-text">Fangchen Liu<sup>1</sup></a>
+                </div>
+                <div class="base-col author-col2">
+                    <a href="https://www.research.autodesk.com/people/hui-li/" target="_blank" class="author-text">Hui Li<sup>2</sup></a>
+                </div>
+                <div class="base-col author-col3">
+                    <a href="https://goldberg.berkeley.edu" target="_blank" class="author-text">Ken Goldberg<sup>1</sup></a>
+                </div>
+               
+            </div>
+           
+            <div class="base-row affiliation-row">
+                <div class="base-col affiliation-col">
+                    <sup>*</sup>Equal Contribution
+                </div>
+                <div class="base-col affiliation-col">
+                    <sup>1</sup>UC Berkeley
+                </div>
+                <div class="base-col affiliation-col">
+                    <sup>2</sup>Autodesk
+                </div>
+            </div>
+            
+            <div class="link-labels base-row" style="max-width: 500px">
+                <div class="base-col icon-col"><a href="https://openreview.net/forum?id=tFEOOH9eH0" target="_blank"
+                        class="link-block">
+                        <i class="fa fas fa-file-text main-icon" style="font-size: 50px"></i>
+                    </a>
+                </div>
+                <div class="base-col icon-col"><a href="https://github.com/Max-Fu/icrt" class="link-block">
+                        <i class="fa fa-github main-icon" style="font-size: 55px"></i>
+                    </a>
+                </div>
+                <div class="base-col icon-col"><a href="https://huggingface.co/datasets/Ravenh97/ICRT-MT" class="link-block">
+                        <i class="fa fa-database main-icon" style="font-size: 50px"></i>
+                    </a>
+                </div>
+                <div class="base-col icon-col"><a href="https://huggingface.co/mlfu7/Touch-Vision-Language-Models" class="link-block">
+                        <i class="fa fa-download main-icon" style="font-size: 55px"></i>
+                    </a>
+                </div>
+                <div class="base-col icon-col"><a href="#citation" class="link-block">
+                        <i class="fa fa-graduation-cap main-icon" style="font-size: 50px"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="link-labels base-row" style="max-width: 500px">
+                <div class="base-col icon-col"><a href="https://arxiv.org/abs/2401.14391" target="_blank"
+                        class="no-underline">
+                        <strong class="link-labels-text">Paper</strong></a>
+                </div>
+                <div class="base-col icon-col"><a href="https://github.com/Max-Fu/tvl" class="no-underline">
+                        <strong class="link-labels-text">Code</strong></a>
+                </div>
+                <div class="base-col icon-col"><a href="https://huggingface.co/datasets/mlfu7/Touch-Vision-Language-Dataset" class="no-underline">
+                        <strong class="link-labels-text">Dataset</strong></a>
+                </div>
+                <div class="base-col icon-col"><a href="https://huggingface.co/mlfu7/Touch-Vision-Language-Models" class="no-underline">
+                        <strong class="link-labels-text">Models</strong></a>
+                </div>
+                <div class="base-col icon-col"><a href="#citation" class="no-underline">
+                        <strong class="link-labels-text">Citation</strong></a>
+                </div>
+            </div>
+            <h1 class="tldr">
+                <b>TL;DR</b>: Casting in context imitation learning as a next token prediction problem.
+            </h1>
+
+            <div class="base-row add-top-padding">
+                <div class="base-row add-top-padding">
+                    <img class="img" src="images/splash.png" />
+                </div>
+                <h1 class="title">Overview</h1>
+                <p class="paragraph">
+                    We explore how to enhance next-token prediction models to perform in-context imitation learning on a real robot, where the robot executes new tasks by interpreting contextual information provided during the input phase, without updating its underlying policy parameters. We propose <b>In-Context Robot Trans-former (ICRT)</b>, a causal transformer that performs autoregressive prediction of sensorimotor trajectories without relying on any linguistic data or reward function. This simple formulation enables flexible and training-free execution of new tasks at test time, achieved by prompting the model with sensorimotor trajectories of the new task composing of image observations, actions and states tuples, collected through human teleoperation. Experiments with a Franka Emika robot demonstrate that the ICRT can adapt to new tasks specified by prompts, even in environment configurations that differ from both the prompt and the training data. In a multi-task environment setup, ICRT significantly outperforms current state-of-the-art next-token prediction models in robotics on generalizing to unseen tasks. 
+                </p>
+            </div>
+            <div class="base-row add-large-top-padding">
+                <h1 class="title">Methodology</h1>
+                <div class="base-row add-top-padding">
+                    <img class="img" src="images/method_figure.png" />
+                </div>
+                <p class="paragraph add-top-padding">
+                    We encode the robot observations (left and wrist camera observation) with a pre-trained vision transformer. Additionally, we encode proprioception with a multilayer perceptron (MLP). We concatenate the visual latent and the proprioception’s latent and use attention pooling to extract a feature to represent the current state. We use another MLP to encode the action taken at the current step as the action feature. We concatenate multiple trajectories of the same task and randomly sample the first k trajectories as the prompt. We encode the trajectories via a causal transformer, and the model decodes a series of tokens. We decode the tokens that are at the position of the state features to generate the next h = 16 action via a MLP.
+                </p>
+                
+            </div>
+            <div class="base-row add-top-padding">
+                <h1 class="title">Model Architecture and Training</h1>
+
+                <p class="paragraph">
+                    <b>Transformer Model</b> We consider a randomly initialized Llama2 model of 12 layers with a latent dimension of 768, which takes as input the sequence of state and action features that are produced by the modality-specific projectors. We add MLP decoders to produce state and action outputs from the last layer of the transformer at the appropriate positions.
+                </p>
+
+                <div class="base-row add-top-padding"><img class="img" src="images/tasks.png" /></div>
+
+                <p class="paragraph">
+                    <b>Multi-Task Dataset</b> We utilize the existing large robotic dataset DROID and a multi-task dataset manually collected in our robot setup, which we name ICRT-Multi-Task (ICRT-MT). Many trajectories in the DROID dataset are collected in a single-task setup, where only one task can be completed in the given environment. We find that multi-task data is crucial for the model to learn from the prompt. Therefore, we manually collected a multi-task dataset ICRT-Multi-Task (ICRT-MT) using the DROID setup. This dataset has 1098 trajectories in total, and contains 26 tasks with 6 primitives. Objects used in the data collection and examples of the primitives are shown in the Figure above. In ICRT-MT, each environment is set so that there exist more than 2 possible tasks for the current observation. ICRT is pre-trained on the DROID dataset and fine-tuned on ICRT-MT.
+                </p>
+                
+                <p class="paragraph">
+                    <b>Loss Function</b> During the training, we sample n trajectories for a total sequence length L as the input. We randomly select the first k trajectories and label them as the prompt within the sequence. At least one complete trajectory is included in the prompt. We only compute action prediction with L1-loss for the actions after the prompt trajectories.
+                </p>
+
+
+            </div>
+            <div class="base-row add-top-padding">
+                <h1 class="title">Experiments</h1>
+                <p class="paragraph">
+                    We consider two action primitives: a pick-and-place primitive and a poking primitive. For each action primitive, we design six unseen tasks, with three tasks evaluating in-domain object generalization and three evaluating on objects unseen during training. We compare the performance of ICRT with three variants of ICRT and three baselines listed below.
+                </p>
+                
+                <p class="paragraph">
+                    <b>ICRT Variants</b>
+                    <ul>
+                        <li>ICRT-Llama2, a pre-trained Llama2-7B language model fine-tuned on ICRT-MT with LoRA; </li> 
+                        <li>ICRT (DROID), a randomly initialized Llama2-Base model trained only on the DROID dataset;</li> 
+                        <li>ICRT (MT),a randomly initialized Llama2-Base model trained only on the ICRT-MT dataset.</li> 
+                    </ul>
+                </p>
+                <p class="paragraph">
+                    <b>Baselines</b>
+                    <ul>
+                        <li>Goal-conditioned, a policy trained with the dataset where each sample contains only one trajectory and the goal observation and state pair are always prepended to the sequence; </li> 
+                        <li>Octo, the state-of-the-art goal-image observation and language conditioned policy fine-tuned on ICRT-MT;</li> 
+                        <li>OpenVLA, the state-of-the-art language conditioned multi-task imitation learning algorithm fine-tuned on ICRT-MT;</li> 
+                    </ul>
+                </p>
+                
+                <div class="base-row add-top-padding">
+                    <img class="img" src="images/inference.png" />
+                </div>
+                <p class="paragraph">
+                    <b>Inference</b> For each task, we collect human-teleoperated robot demonstrations in <b>a different environment</b> as the prompt for running the experiment. We provide one or more human-teleoperated demonstration in the form of robot sensorimotor trajectories (formatted identically to the training data), along with the current image observations and the robot’s proprioceptive state as inputs. The model then predicts the next action, which is executed by the robot. After each action, the policy receives updated image observations  and proprioceptive state, allowing it to iteratively predict and execute subsequent actions.
+                </p>
+
+                <p class="paragraph">
+                    <b>Results</b> We present the results in Table 1 and Table 2. The results suggest that ICRT outperforms the other variants and baselines. ICRT is able to generalize to unseen tasks and objects, even in environments that differ from the prompt.
+                </p>
+                <div class="base-row add-top-padding">
+                    <img class="img" src="images/table1.png" />
+                </div>
+                <div class="base-row add-top-padding">
+                    <img class="img" src="images/table2.png" />
+                </div>
+               
+            </div>
+
+            <div class="citation add-large-top-padding">
+                <h1 id="citation">Citation</h1>
+                <p style="font-size: 16px">If you use this work or find it helpful, please consider citing our work.</p>
+                <pre id="codecell">
+@inproceedings{
+  
+}
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <p class="credit">Credit: The design of this project page references the project pages of <a
+            href="https://www.matthewtancik.com/nerf">NeRF</a>, <a
+            href="https://crossmae.github.io">CrossMAE</a>, <a
+            href="https://github.com/DeepMotionEditing/DeepMotionEditing.github.io">DeepMotionEditing</a>, and <a
+            href="https://www.lerf.io/">LERF</a>.</p>
+</body>
