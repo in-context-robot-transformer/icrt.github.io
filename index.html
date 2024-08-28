@@ -89,7 +89,7 @@
             </div>
             
             <div class="link-labels base-row" style="max-width: 500px">
-                <div class="base-col icon-col"><a href="https://openreview.net/forum?id=tFEOOH9eH0" target="_blank"
+                <div class="base-col icon-col"><a href="" target="_blank"
                         class="link-block">
                         <i class="fa fas fa-file-text main-icon" style="font-size: 50px"></i>
                     </a>
@@ -102,7 +102,7 @@
                         <i class="fa fa-database main-icon" style="font-size: 50px"></i>
                     </a>
                 </div>
-                <div class="base-col icon-col"><a href="https://huggingface.co/mlfu7/Touch-Vision-Language-Models" class="link-block">
+                <div class="base-col icon-col"><a href="https://huggingface.co/mlfu7/ICRT" class="link-block">
                         <i class="fa fa-download main-icon" style="font-size: 55px"></i>
                     </a>
                 </div>
@@ -112,17 +112,17 @@
                 </div>
             </div>
             <div class="link-labels base-row" style="max-width: 500px">
-                <div class="base-col icon-col"><a href="https://arxiv.org/abs/2401.14391" target="_blank"
+                <div class="base-col icon-col"><a href="" target="_blank"
                         class="no-underline">
                         <strong class="link-labels-text">Paper</strong></a>
                 </div>
-                <div class="base-col icon-col"><a href="https://github.com/Max-Fu/tvl" class="no-underline">
+                <div class="base-col icon-col"><a href="https://github.com/Max-Fu/icrt" class="no-underline">
                         <strong class="link-labels-text">Code</strong></a>
                 </div>
-                <div class="base-col icon-col"><a href="https://huggingface.co/datasets/mlfu7/Touch-Vision-Language-Dataset" class="no-underline">
+                <div class="base-col icon-col"><a href="https://huggingface.co/datasets/Ravenh97/ICRT-MT" class="no-underline">
                         <strong class="link-labels-text">Dataset</strong></a>
                 </div>
-                <div class="base-col icon-col"><a href="https://huggingface.co/mlfu7/Touch-Vision-Language-Models" class="no-underline">
+                <div class="base-col icon-col"><a href="https://huggingface.co/mlfu7/ICRT" class="no-underline">
                         <strong class="link-labels-text">Models</strong></a>
                 </div>
                 <div class="base-col icon-col"><a href="#citation" class="no-underline">
@@ -132,12 +132,14 @@
             <h1 class="tldr">
                 <b>TL;DR</b>: Casting in context imitation learning as a next token prediction problem.
             </h1>
-
+            <video id="main-video" autobuffer="" muted="" autoplay="true" loop="true" controls="">
+                <source id="mp4" src="videos/teaser_icrt.mp4" type="video/mp4">
+            </video>
             <div class="base-row add-top-padding">
+                <h1 class="title">Overview</h1>
                 <div class="base-row add-top-padding">
                     <img class="img" src="images/splash.png" />
                 </div>
-                <h1 class="title">Overview</h1>
                 <p class="paragraph">
                     We explore how to enhance next-token prediction models to perform in-context imitation learning on a real robot, where the robot executes new tasks by interpreting contextual information provided during the input phase, without updating its underlying policy parameters. We propose <b>In-Context Robot Trans-former (ICRT)</b>, a causal transformer that performs autoregressive prediction of sensorimotor trajectories without relying on any linguistic data or reward function. This simple formulation enables flexible and training-free execution of new tasks at test time, achieved by prompting the model with sensorimotor trajectories of the new task composing of image observations, actions and states tuples, collected through human teleoperation. Experiments with a Franka Emika robot demonstrate that the ICRT can adapt to new tasks specified by prompts, even in environment configurations that differ from both the prompt and the training data. In a multi-task environment setup, ICRT significantly outperforms current state-of-the-art next-token prediction models in robotics on generalizing to unseen tasks. 
                 </p>
